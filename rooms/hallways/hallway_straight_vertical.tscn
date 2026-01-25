@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://clrxw6n6ihcam"]
+
+[ext_resource type="Texture2D" uid="uid://8wovwyk00ajn" path="res://assets/colorless/hallway_straight.png" id="1_gajpl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_grywq"]
+size = Vector2(49, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mu7qn"]
+size = Vector2(50, 48)
+
+[node name="HallwayStraightVertical" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = -1.5708
+texture = ExtResource("1_gajpl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-19, 0)
+rotation = -1.5708
+shape = SubResource("RectangleShape2D_grywq")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(19, 0)
+rotation = -1.5708
+shape = SubResource("RectangleShape2D_grywq")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_mu7qn")

@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=3 uid="uid://b5hx88o8gv1p5"]
+
+[ext_resource type="PackedScene" uid="uid://cqh7vcq52r386" path="res://rooms/colorless/floor_2_commute.tscn" id="1_5y3gl"]
+[ext_resource type="Script" uid="uid://cgmelni7okx61" path="res://system/main_house_colorless.gd" id="1_06r07"]
+[ext_resource type="PackedScene" uid="uid://ctde20y8hfjv5" path="res://rooms/colorless/living_room.tscn" id="2_jre0q"]
+[ext_resource type="PackedScene" uid="uid://b00btq3q1um7j" path="res://rooms/player.tscn" id="3_gaajr"]
+[ext_resource type="PackedScene" uid="uid://bgoqf0g8scau6" path="res://rooms/map_system.tscn" id="3_jre0q"]
+
+[node name="MainHouse" type="Node2D"]
+script = ExtResource("1_06r07")
+
+[node name="Rooms" type="Node2D" parent="."]
+
+[node name="Floor2Commute" parent="Rooms" instance=ExtResource("1_5y3gl")]
+
+[node name="LivingRoom" parent="Rooms" instance=ExtResource("2_jre0q")]
+position = Vector2(607, 65)
+rotation = 1.5708
+
+[node name="PlacedHallways" type="Node" parent="."]
+
+[node name="Player" parent="." instance=ExtResource("3_gaajr")]
+position = Vector2(27, 47)
+
+[node name="MapSystem" parent="." instance=ExtResource("3_jre0q")]
+visible = false

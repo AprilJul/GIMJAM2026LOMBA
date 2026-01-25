@@ -1,0 +1,67 @@
+[gd_scene load_steps=7 format=3 uid="uid://ctde20y8hfjv5"]
+
+[ext_resource type="Texture2D" uid="uid://cnfyqyntjyxjf" path="res://assets/colorless/rumah_0000s_0000_lantai1NoColor.png" id="1_mg71k"]
+[ext_resource type="Texture2D" uid="uid://2v52lfjdc3ao" path="res://assets/colorless/rumah_0000s_0001_stairNoColor.png" id="2_0enoy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mg71k"]
+size = Vector2(4, 244)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0enoy"]
+size = Vector2(128, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qcsno"]
+size = Vector2(108, 9)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4ps8e"]
+size = Vector2(12, 9)
+
+[node name="LivingRoom" type="StaticBody2D"]
+position = Vector2(5, 2)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(49.1, -127)
+texture = ExtResource("1_mg71k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-16.9, -131)
+shape = SubResource("RectangleShape2D_mg71k")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(115.1, -131)
+shape = SubResource("RectangleShape2D_mg71k")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2(49.1, -238)
+shape = SubResource("RectangleShape2D_0enoy")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="."]
+position = Vector2(63.1, -4.5)
+shape = SubResource("RectangleShape2D_qcsno")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="."]
+position = Vector2(-12.9, -4.5)
+shape = SubResource("RectangleShape2D_4ps8e")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(-19.9, -254)
+polygon = PackedVector2Array(117, 80, 118, 55, 114, 55, 114, 42, 111, 39, 104, 39, 99, 42, 99, 55, 89, 55, 89, 42, 85, 39, 77, 39, 73, 42, 73, 55, 69, 55, 69, 81, 72, 81, 72, 72, 99, 72, 99, 91, 115, 91)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="."]
+position = Vector2(-19.9, -254)
+polygon = PackedVector2Array(5, 31, 5, 118, 23, 118, 23, 77, 21, 77, 21, 68, 21, 52, 52, 52, 52, 40, 27, 40, 27, 31)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="."]
+position = Vector2(-19.9, -254)
+polygon = PackedVector2Array(66, 184, 45, 184, 45, 226, 66, 226)
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(79.1, -130)
+texture = ExtResource("2_0enoy")
+
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="."]
+position = Vector2(-19.9, -254)
+polygon = PackedVector2Array(69, 138, 107, 123, 101, 123, 101, 119, 94, 119, 94, 116, 86, 116, 86, 113, 77, 113, 77, 110, 69, 110, 69, 110)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="."]
+position = Vector2(-19.9, -254)
+polygon = PackedVector2Array(69, 82, 111, 102, 132, 102, 132, 100, 111, 100, 69, 80)

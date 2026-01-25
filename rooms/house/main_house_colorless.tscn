@@ -1,0 +1,50 @@
+[gd_scene load_steps=8 format=3 uid="uid://b5hx88o8gv1p5"]
+
+[ext_resource type="PackedScene" uid="uid://cqh7vcq52r386" path="res://rooms/colorless/floor_2_commute.tscn" id="1_5y3gl"]
+[ext_resource type="Script" uid="uid://cgmelni7okx61" path="res://system/main_house_colorless.gd" id="1_06r07"]
+[ext_resource type="Script" uid="uid://b4eummiush2mk" path="res://grid_display.gd" id="2_g1sih"]
+[ext_resource type="PackedScene" uid="uid://ctde20y8hfjv5" path="res://rooms/colorless/living_room.tscn" id="2_jre0q"]
+[ext_resource type="PackedScene" uid="uid://cvie072o00unb" path="res://rooms/colorless/bedroom_1.tscn" id="3_8t2qx"]
+[ext_resource type="PackedScene" uid="uid://bgoqf0g8scau6" path="res://rooms/map_system.tscn" id="3_jre0q"]
+[ext_resource type="PackedScene" uid="uid://cb2cwrjgxfsvw" path="res://player/player.tscn" id="5_g1sih"]
+
+[node name="MainHouse" type="Node2D"]
+script = ExtResource("1_06r07")
+
+[node name="WorldContent" type="Node2D" parent="."]
+
+[node name="GridDisplay" type="Node2D" parent="WorldContent"]
+script = ExtResource("2_g1sih")
+
+[node name="PlacedHallways" type="Node2D" parent="WorldContent"]
+y_sort_enabled = true
+
+[node name="Rooms" type="Node2D" parent="WorldContent"]
+y_sort_enabled = true
+
+[node name="Floor2" type="Node2D" parent="WorldContent/Rooms"]
+
+[node name="Bedroom1" parent="WorldContent/Rooms/Floor2" instance=ExtResource("3_8t2qx")]
+position = Vector2(525, 517)
+scale = Vector2(1.4, 1.4)
+
+[node name="Floor2Commute" parent="WorldContent/Rooms/Floor2" instance=ExtResource("1_5y3gl")]
+position = Vector2(575, 401)
+scale = Vector2(1.4, 1.6)
+
+[node name="LivingRoom" parent="WorldContent/Rooms" instance=ExtResource("2_jre0q")]
+visible = false
+position = Vector2(375, 301)
+
+[node name="Player" parent="WorldContent" instance=ExtResource("5_g1sih")]
+y_sort_enabled = true
+position = Vector2(580, 323)
+
+[node name="MapCanvas" type="CanvasLayer" parent="."]
+
+[node name="MapSystem" parent="MapCanvas" node_paths=PackedStringArray("placed_hallways_node") instance=ExtResource("3_jre0q")]
+position = Vector2(-2, 2)
+placed_hallways_node = NodePath("../../WorldContent/PlacedHallways")
+
+[node name="MapCamera" type="Camera2D" parent="MapCanvas"]
+position = Vector2(640, 360)
