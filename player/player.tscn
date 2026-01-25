@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://cb2cwrjgxfsvw"]
+[gd_scene load_steps=28 format=3 uid="uid://cb2cwrjgxfsvw"]
 
 [ext_resource type="Script" uid="uid://cqp0qlrmdbooj" path="res://player/player.gd" id="1_rkbax"]
 [ext_resource type="Texture2D" uid="uid://drl1b3b351hks" path="res://art/Character/mc.png" id="2_g1dw6"]
@@ -177,24 +177,35 @@ animations = [{
 radius = 4.0
 height = 20.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yw30f"]
+size = Vector2(15, 5)
+
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_rkbax")
 inv = ExtResource("2_yw30f")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -15)
 sprite_frames = SubResource("SpriteFrames_g4c7l")
 animation = &"idle"
-frame_progress = 0.53787005
+frame_progress = 0.53787
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 4)
+position = Vector2(0, -11)
 shape = SubResource("CapsuleShape2D_rkbax")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, -15)
 zoom = Vector2(3, 3)
 
 [node name="Inv_UI" parent="." instance=ExtResource("4_yw30f")]
 offset_left = -51.0
-offset_top = -58.0
+offset_top = -73.0
 offset_right = 51.0
-offset_bottom = -15.0
+offset_bottom = -30.0
+
+[node name="ShapeCast2D" type="ShapeCast2D" parent="."]
+shape = SubResource("RectangleShape2D_yw30f")
+target_position = Vector2(0, 0)
+collision_mask = 4
+collide_with_areas = true
