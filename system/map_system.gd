@@ -3,6 +3,7 @@ extends Node2D
 @export var placed_hallways_node: Node2D
 @onready var straight_label = $StraightRemaining
 
+
 var grid_size = 50
 var inventory = {"straight": 5, "turn": 2}
 var dragged_hallway: Node2D = null
@@ -11,7 +12,12 @@ var placed_previews: Array = []
 func _ready():
 	visible = false
 	_update_inventory_ui()
+	$SanityLabel.text = "Sanity: %d" % GameManager.sanity
+	GameManager.sanity_changed.connect(_on_sanity_changed)
 
+func _on_sanity_changed(value: int):
+	$SanityLabel.text = "Sanity: %d" % value
+	
 func _process(_delta):
 	# Only run logic if the Map is actually open
 	if visible and dragged_hallway:
@@ -34,10 +40,13 @@ func _process(_delta):
 func open_map():
 	visible = true
 	_update_inventory_ui()
+	$SanityLabel.text = "Sanity: %d" % GameManager.sanity
 
 func close_map():
 	visible = false
 	_spawn_real_hallways()
+	if GameManager.sanity_changed.is_connected(_on_sanity_changed):
+		GameManager.sanity_changed.disconnect(_on_sanity_changed)
 
 func _input(event):
 	if !visible:

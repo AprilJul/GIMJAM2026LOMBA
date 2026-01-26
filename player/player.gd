@@ -8,9 +8,15 @@ var player_state
 # Reference to the MapSystem to check for placed hallways
 @onready var map_system = get_node_or_null("/root/MainHouse/MapCanvas/MapSystem")
 
+
 func _physics_process(_delta):
 	var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	
+	if GameManager.is_dialog_active:
+		velocity = Vector2.ZERO
+		move_and_slide()
+		return
+		
 	if direction == Vector2.ZERO:
 		player_state = "idle"
 		velocity = Vector2.ZERO

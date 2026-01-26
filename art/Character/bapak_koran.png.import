@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cw8sm27lwk186"
-path="res://.godot/imported/inventory-slot.png-4890d872dd76c8a391e3d132f9e06859.ctex"
+uid="uid://qyna1auynvpr"
+path="res://.godot/imported/bapak_koran.png-9f6d9c0faea99c407e1ac0b2d22b237a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://player/inventory/inventory_ui/inventory-slot.png"
-dest_files=["res://.godot/imported/inventory-slot.png-4890d872dd76c8a391e3d132f9e06859.ctex"]
+source_file="res://art/Character/bapak_koran.png"
+dest_files=["res://.godot/imported/bapak_koran.png-9f6d9c0faea99c407e1ac0b2d22b237a.ctex"]
 
 [params]
 
