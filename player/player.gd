@@ -26,6 +26,14 @@ func _physics_process(_delta):
 	move_and_slide()
 	play_animation(direction)
 
+	var map = get_tree().get_first_node_in_group("Map")
+	
+	if map and map.visible:
+		velocity = Vector2.ZERO # Stop sliding
+		move_and_slide()
+		return # Skip the rest of the movement code
+		
+		
 func _can_move_to(dir: Vector2) -> bool:
 	shape_cast.target_position = dir * 4
 	shape_cast.force_shapecast_update()

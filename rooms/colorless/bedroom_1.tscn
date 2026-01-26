@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://cvie072o00unb"]
+[gd_scene load_steps=10 format=3 uid="uid://cvie072o00unb"]
 
 [ext_resource type="Texture2D" uid="uid://d253cg6wlm1lk" path="res://assets/colorless/rumah_0000s_0006_kamarAnakNoColor.png" id="1_xavvm"]
+[ext_resource type="Script" uid="uid://cvrsuek2te4ou" path="res://system/transparent_stairs.gd" id="2_k22lf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xavvm"]
 size = Vector2(45, 29)
@@ -22,7 +23,7 @@ a = Vector2(-17, 9)
 b = Vector2(16, 9)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k55cr"]
-size = Vector2(72, 100)
+size = Vector2(72, 78)
 
 [node name="Bedroom1" type="StaticBody2D"]
 
@@ -35,6 +36,10 @@ position = Vector2(-32.5, 36.5)
 shape = SubResource("RectangleShape2D_xavvm")
 
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="."]
+position = Vector2(-53, 75.5)
+shape = SubResource("RectangleShape2D_roilg")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="."]
 position = Vector2(-53, 75.5)
 shape = SubResource("RectangleShape2D_roilg")
 
@@ -57,9 +62,15 @@ shape = SubResource("RectangleShape2D_w80ka")
 position = Vector2(-34, 70)
 shape = SubResource("SegmentShape2D_roilg")
 
+[node name="TransparentWall" type="Area2D" parent="."]
+script = ExtResource("2_k22lf")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TransparentWall"]
+polygon = PackedVector2Array(-55, 0, 17, 0, 17, 22, 8, 22, 8, 34, -9, 34, -9, 22, -55, 22)
+
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-19, 50)
+position = Vector2(-19, 61)
 shape = SubResource("RectangleShape2D_k55cr")

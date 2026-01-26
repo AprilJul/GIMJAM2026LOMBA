@@ -1,3 +1,61 @@
-[gd_scene format=3 uid="uid://7h60sam1dytg"]
+[gd_scene load_steps=9 format=3 uid="uid://7h60sam1dytg"]
 
-[node name="MasterBedroom" type="Node2D"]
+[ext_resource type="Texture2D" uid="uid://qlgsw7pvutt" path="res://assets/colorless/rumah_0000s_0003_kamarOrtuNoColor.png" id="1_o1i0o"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o1i0o"]
+size = Vector2(19, 35)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w2wqg"]
+size = Vector2(4, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pa2kh"]
+size = Vector2(9, 4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nmsn4"]
+size = Vector2(4, 71)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ofvgd"]
+size = Vector2(128, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hnfpc"]
+size = Vector2(12, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u4ymm"]
+size = Vector2(4, 93)
+
+[node name="MasterBedroom" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(58, -62)
+texture = ExtResource("1_o1i0o")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-20, -124, -20, -96.8405, -20, -93, -5, -93, -4, -49, 30, -49, 30, -94, 80, -93, 80, -78, 84, -78, 84, -94, 105, -94, 105, -79, 133, -79, 136, -79, 136, -118.386, 136, -124)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(75, -29)
+shape = SubResource("RectangleShape2D_o1i0o")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(82, -28)
+shape = SubResource("RectangleShape2D_w2wqg")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2(60, -28)
+shape = SubResource("RectangleShape2D_pa2kh")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="."]
+position = Vector2(134, -43.5)
+shape = SubResource("RectangleShape2D_nmsn4")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="."]
+position = Vector2(72, -4)
+shape = SubResource("RectangleShape2D_ofvgd")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="."]
+position = Vector2(-14, -4)
+shape = SubResource("RectangleShape2D_hnfpc")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="."]
+position = Vector2(-18, -46.5)
+shape = SubResource("RectangleShape2D_u4ymm")

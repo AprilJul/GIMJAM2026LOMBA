@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://cqh7vcq52r386"]
+[gd_scene load_steps=14 format=3 uid="uid://cqh7vcq52r386"]
 
 [ext_resource type="Texture2D" uid="uid://dp2vjlsy5rn5j" path="res://assets/colorless/rumah_0000s_0005_hallNoColor.png" id="1_1juvx"]
 [ext_resource type="Texture2D" uid="uid://dxg0o5bprql47" path="res://assets/colorless/rumah_0000s_0004_railNoColor.png" id="2_q6o71"]
+[ext_resource type="Script" uid="uid://cvrsuek2te4ou" path="res://system/transparent_stairs.gd" id="3_q6o71"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_popdy"]
-size = Vector2(102, 21)
+size = Vector2(71.5, 25.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1juvx"]
 size = Vector2(105, 124)
@@ -27,6 +28,13 @@ size = Vector2(15, 8)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uywx8"]
 size = Vector2(44, 8)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q6o71"]
+size = Vector2(7, 20)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_1juvx"]
+a = Vector2(17, -34)
+b = Vector2(25, -33)
+
 [node name="Floor2Commute" type="StaticBody2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -38,7 +46,7 @@ position = Vector2(48.5, -60)
 texture = ExtResource("2_q6o71")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(31.5, -112.5)
+position = Vector2(46, -86.25)
 shape = SubResource("RectangleShape2D_popdy")
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -74,4 +82,24 @@ shape = SubResource("RectangleShape2D_uywx8")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 position = Vector2(-23.5, -124)
-polygon = PackedVector2Array(103, 68, 39, 68, 39, 69, 48, 69, 48, 72, 56, 72, 56, 92, 48, 92, 48, 88, 40, 88, 40, 94, 103, 94)
+polygon = PackedVector2Array(103, 68, 56.5, 68, 48.5, 66, 48.5, 60, 40.5, 60, 49.5, 68, 50.5, 69, 56, 72, 56, 92, 48, 92, 45.5, 92, 40.5, 92, 40, 94, 103, 94)
+
+[node name="StairsToF1" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StairsToF1"]
+position = Vector2(28.5, -42)
+shape = SubResource("RectangleShape2D_q6o71")
+
+[node name="LandingF2" type="Marker2D" parent="."]
+position = Vector2(10, -48)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("SegmentShape2D_1juvx")
+
+[node name="TransparentWall" type="Area2D" parent="."]
+script = ExtResource("3_q6o71")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TransparentWall"]
+polygon = PackedVector2Array(-20, -124, 85, -124, 85, -98, 11, -98, 11, -87, -10, -87, -10, -98, -20, -98)

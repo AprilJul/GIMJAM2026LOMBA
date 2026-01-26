@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://b5hx88o8gv1p5"]
+[gd_scene load_steps=11 format=3 uid="uid://b5hx88o8gv1p5"]
 
 [ext_resource type="PackedScene" uid="uid://cqh7vcq52r386" path="res://rooms/colorless/floor_2_commute.tscn" id="1_5y3gl"]
 [ext_resource type="Script" uid="uid://cgmelni7okx61" path="res://system/main_house_colorless.gd" id="1_06r07"]
@@ -6,10 +6,17 @@
 [ext_resource type="PackedScene" uid="uid://ctde20y8hfjv5" path="res://rooms/colorless/living_room.tscn" id="2_jre0q"]
 [ext_resource type="PackedScene" uid="uid://cvie072o00unb" path="res://rooms/colorless/bedroom_1.tscn" id="3_8t2qx"]
 [ext_resource type="PackedScene" uid="uid://bgoqf0g8scau6" path="res://rooms/map_system.tscn" id="3_jre0q"]
+[ext_resource type="PackedScene" uid="uid://clrxw6n6ihcam" path="res://rooms/hallways/hallway_straight_vertical.tscn" id="4_eqhth"]
 [ext_resource type="PackedScene" uid="uid://cb2cwrjgxfsvw" path="res://player/player.tscn" id="5_g1sih"]
+[ext_resource type="PackedScene" uid="uid://cn504iyb76kwy" path="res://rooms/colorless/bedroom_2.tscn" id="5_udac8"]
+[ext_resource type="PackedScene" uid="uid://7h60sam1dytg" path="res://rooms/colorless/master_bedroom.tscn" id="6_w317r"]
 
-[node name="MainHouse" type="Node2D"]
+[node name="MainHouse" type="Node2D" node_paths=PackedStringArray("f1_landing", "f2_landing", "stairs_up_trigger", "stairs_down_trigger")]
 script = ExtResource("1_06r07")
+f1_landing = NodePath("WorldContent/Rooms/LivingRoom/LandingF1")
+f2_landing = NodePath("WorldContent/Rooms/Floor2/Floor2Commute/LandingF2")
+stairs_up_trigger = NodePath("WorldContent/Rooms/LivingRoom/StairSToF2")
+stairs_down_trigger = NodePath("WorldContent/Rooms/Floor2/Floor2Commute/StairsToF1")
 
 [node name="WorldContent" type="Node2D" parent="."]
 
@@ -28,15 +35,29 @@ y_sort_enabled = true
 position = Vector2(525, 517)
 scale = Vector2(1.4, 1.4)
 
+[node name="HallwayStraightVertical" parent="WorldContent/Rooms/Floor2" instance=ExtResource("4_eqhth")]
+position = Vector2(575, 225)
+
 [node name="Floor2Commute" parent="WorldContent/Rooms/Floor2" instance=ExtResource("1_5y3gl")]
 position = Vector2(575, 401)
 scale = Vector2(1.4, 1.6)
 
-[node name="LivingRoom" parent="WorldContent/Rooms" instance=ExtResource("2_jre0q")]
-visible = false
-position = Vector2(375, 301)
+[node name="CollisionShape2D" parent="WorldContent/Rooms/Floor2/Floor2Commute/Area2D" index="0"]
+position = Vector2(32.5, -61.875)
 
-[node name="Player" parent="WorldContent" instance=ExtResource("5_g1sih")]
+[node name="Bedroom2" parent="WorldContent/Rooms/Floor2" instance=ExtResource("5_udac8")]
+position = Vector2(925, 500)
+scale = Vector2(1.1, 1)
+
+[node name="MasterBedroom" parent="WorldContent/Rooms/Floor2" instance=ExtResource("6_w317r")]
+position = Vector2(1025, 200)
+scale = Vector2(1.4, 1.4)
+
+[node name="LivingRoom" parent="WorldContent/Rooms" instance=ExtResource("2_jre0q")]
+position = Vector2(2837, 412)
+scale = Vector2(1.4, 1.4)
+
+[node name="Player" parent="WorldContent" groups=["Player"] instance=ExtResource("5_g1sih")]
 y_sort_enabled = true
 position = Vector2(580, 323)
 
@@ -48,3 +69,6 @@ placed_hallways_node = NodePath("../../WorldContent/PlacedHallways")
 
 [node name="MapCamera" type="Camera2D" parent="MapCanvas"]
 position = Vector2(640, 360)
+
+[editable path="WorldContent/Rooms/Floor2/Floor2Commute"]
+[editable path="WorldContent/Rooms/LivingRoom"]
