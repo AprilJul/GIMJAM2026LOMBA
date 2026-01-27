@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cpys40ewbcjhe"
-path="res://.godot/imported/rumah_0000s_0005_hallNoColor.png-3411fba984fd4ece024fcb59041f48ca.ctex"
+uid="uid://baua4h8308yfp"
+path="res://.godot/imported/bapak.png-26722304e1961a320906614c3edfd027.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/RUMAH COLORLESS/rumah_0000s_0005_hallNoColor.png"
-dest_files=["res://.godot/imported/rumah_0000s_0005_hallNoColor.png-3411fba984fd4ece024fcb59041f48ca.ctex"]
+source_file="res://art/Character/bapak.png"
+dest_files=["res://.godot/imported/bapak.png-26722304e1961a320906614c3edfd027.ctex"]
 
 [params]
 

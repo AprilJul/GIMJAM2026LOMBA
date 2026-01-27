@@ -1,0 +1,123 @@
+~ start
+
+~ scene1_monolog
+[wave] Today is more tiring than ever… I need to settle down and rest. [wave]
+
+~ waking_up
+
+Player: ....What was that..?
+Player: Now my head hurts...
+Player: ... Why am I forgetting things?
+Player: I remember something...
+Player: Remember that W is forward, A is left, D is right, and S is down. 
+Player: That sudden bang....
+Player: It came from the door, isn't it?
+
+=> END
+
+~ tutorial_glitch
+
+Player: Ugh, why is it empty behind here? Hello?
+Player: This is not normal... How do I get out of here?
+[color=#ffde66] Press M to open map and seek what is happening.[/color]
+
+=> END
+
+~ map_explanation
+
+[color=#ffff00]You are now seeing the map of your house.[/color]
+[color=#ffff00]To move between rooms, you must place hallways.[/color]
+[color=#ffff00]You can place hallways by selecting the hallway on bottom left or pressing 1 and 2.[/color]
+[color=#ffff00]To cancel placement press Esc.[/color]
+[color=#ffff00]To rotate your placement press Q or E.[/color]
+[color=#ffff00]To place down, just use your left click.[/color]
+[color=#ffff00]The amount of hallways you can place will be reduced. Both types share the same value. Be smart and economic about this![/color]
+[color=#3399ff]Your goal now: Go to the central room of 2nd floor.[/color]
+
+=> END 
+
+~ scene5A_interact_TeddyBear
+it feels familiar 
+Warm
+
+~ scene5B_child
+Child: [b]Sis! Mom’s been calling you — come here![/b]
+
+~ scene5C_dad
+Dad: You’re home early today
+[wait=2]
+Dad: Good. Don’t push yourself too hard
+
+~ scene5C_mom
+Mom: Wash your hands first
+Mom: Dinner will be ready soon
+Mom: [wave amp=20.0 freq=3.0]Is the food ready?[/wave]
+
+~ scene6_child
+Child: [wave amp=20.0 freq=3.0] You found me [/wave]
+Child: I was waiting
+
+~ scene6_child_MemShard1
+Child: It’s [wave amp=10.0 freq=3.0]warm[/wave] here
+Child: Let’s stay a little longer
+
+~ scene6_dad
+Dad:You don’t have to be brave all the time
+Dad:I’ve got you
+
+~ scene6_dad_MemShard1
+Dad: If anything happens…
+[wait=1]
+Dad: Just live well. That’s enough
+
+~ scene6_mom
+Mom: Eat slowly
+Mom: You’re always in a hurry
+
+~ scene6_mom_MemShard1
+Mom: No matter how tired I get…
+Mom: [wave amp=10.0 freq=3.0]Coming home to you makes it worth it[/wave]
+
+~ scene6_interactPicnicMat
+For a moment, i feel [wave amp=15.0 freq=3.0]safe[/wave]
+
+~ scene6_leaving_picnic_area
+Child: Promise you won’t forget?
+
+~ scene7_interact_wardrobe
+It’s cold… yet somehow, this feels familiar
+
+~ scene8_monolog
+[wave amp=20 freq=2.0]Why does it feel heavier down here?[/wave]
+
+~ scene8_interact_EmptyChair
+We used to sit here
+[wait=2]
+# Gw gatau kenapa di gw ga muncul kalo pake [speed], jadi buat nanggulanginnya coba pake
+# DialogueSettings.set_setting("typing_speed", 0.08) di bagian yang ini aja
+[speed=0.4][b]...just the three of us[/b][/speed]
+
+~ epilogue
+Child: You finally came back
+…I didn’t mean to leave
+Child: I’m.. tired of waiting for you
+Child: Yeah, i knew [wait=0.2 ], i knew [wait=0.8]it thats why i always believe in you, [shake amp=5.0 freq=3.0]in myself [/shake]
+[speed=0.8]…I got used to the quiet.[/speed]
+It felt safer that way
+Child: I know
+Child: But you don’t have to stay here anymore
+Child: Come with me
+
+~ epilogue_after_seeing_FirstMemShard
+Child: I kept them
+Child: [wave amp=10.0 freq=1.0]So we wouldn’t lose everything[/wave]
+
+~ ending
+Child: [wave amp=10.0 freq=1.0][b]Then take me with you[/b][/wave]
+
+~ ending_last_monologue
+[speed=0.8][wave amp=10.0 freq=1.0][b][i]I couldn’t save them[/i][/b][/wave][/speed]
+[speed=0.8][wave amp=10.0 freq=1.0][b][i]I couldn’t save who i was[/i][/b][/wave][/speed]
+
+~ ending_last_monologue_after_turningBack
+[speed=0.8][wave amp=10.0 freq=1.0][b][i]So I’ll live for what remains[/i][/b][/wave][/speed]

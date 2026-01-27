@@ -2,22 +2,26 @@ extends CharacterBody2D
 
 var speed = 100
 var player_state
+var can_move := true
 
 @export var inv: Inv
 @onready var shape_cast = $ShapeCast2D
-# Reference to the MapSystem to check for placed hallways
 @onready var map_system = get_node_or_null("/root/MainHouse/MapCanvas/MapSystem")
 
 func _physics_process(_delta):
 	var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	
+	if not can_move:
+		velocity = Vector2.ZERO
+		#print("Player can't move now.")
+		return
+		
 	if direction == Vector2.ZERO:
 		player_state = "idle"
 		velocity = Vector2.ZERO
 	else:
 		player_state = "walking"
 		
-		# UPDATED LOGIC: Use ShapeCast to detect "Floor"
 		if _can_move_to(direction):
 			velocity = direction * speed
 		else:
@@ -29,21 +33,22 @@ func _physics_process(_delta):
 	var map = get_tree().get_first_node_in_group("Map")
 	
 	if map and map.visible:
-		velocity = Vector2.ZERO # Stop sliding
+		velocity = Vector2.ZERO
 		move_and_slide()
-		return # Skip the rest of the movement code
+		return
 		
-		
+	if GameManager.is_dialog_active:
+		velocity = Vector2.ZERO
+		move_and_slide()
+		return
+
 func _can_move_to(dir: Vector2) -> bool:
 	shape_cast.target_position = dir * 4
 	shape_cast.force_shapecast_update()
 	
 	if shape_cast.is_colliding():
-		# This will tell you EXACTLY what you are hitting
-		print("Walking on: ", shape_cast.get_collider(0).name)
 		return true 
 	
-	# If it prints this, the ShapeCast is hitting nothing
 	print("No floor detected at: ", global_position + (dir * 4))
 	return false
 
@@ -56,5 +61,14 @@ func play_animation(dir):
 		else:
 			$AnimatedSprite2D.play("walk_front" if dir.y > 0 else "walk_back")
 
-func player():
-	pass
+# -------------------------------
+# ✨ ADD THESE HELPER FUNCTIONS
+# -------------------------------
+
+# Called by CutsceneController to lock/unlock movement
+func set_can_move(value: bool) -> void:
+	can_move = value
+
+# Optional: quick reset to spawn marker (used in cutscenes)
+func respawn_at_marker(marker: Node2D) -> void:
+	global_position = marker.global_position

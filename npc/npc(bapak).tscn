@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://dveh57hopqvqr"]
+
+[ext_resource type="Texture2D" uid="uid://baua4h8308yfp" path="res://art/Character/bapak.png" id="1_m4g7l"]
+[ext_resource type="Texture2D" uid="uid://qyna1auynvpr" path="res://art/Character/bapak_koran.png" id="2_adqsf"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xqfia"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_m4g7l")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_adqsf")
+}],
+"loop": true,
+"name": &"read_newspaper",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dfa3k"]
+radius = 3.0
+height = 20.0
+
+[node name="npc(bapak)" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_xqfia")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4)
+shape = SubResource("CapsuleShape2D_dfa3k")
