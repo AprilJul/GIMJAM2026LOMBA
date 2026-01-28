@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://ccf4bfwtb18ju"]
+
+[ext_resource type="Script" uid="uid://csbyh7yfwjkn0" path="res://player/inventory/items/item_get_ui.gd" id="1_85ic7"]
+
+[node name="ItemGetUI" type="CanvasLayer"]
+layer = 10
+script = ExtResource("1_85ic7")
+
+[node name="ItemSprite" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+pivot_offset = Vector2(16, 16)
+expand_mode = 1
+stretch_mode = 3

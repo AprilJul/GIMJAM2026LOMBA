@@ -1,0 +1,55 @@
+[gd_scene load_steps=5 format=3 uid="uid://cw4l07ij2hjyt"]
+
+[ext_resource type="Script" uid="uid://8gmlqvjw8fxe" path="res://player_hud.gd" id="1_rpmjj"]
+[ext_resource type="Texture2D" uid="uid://c5rm8878lnbgd" path="res://art/UI/inventory.png" id="2_3fcw0"]
+[ext_resource type="PackedScene" uid="uid://b8k23n74r6k8k" path="res://player/inventory/inventory_ui/inv_ui.tscn" id="2_j85l1"]
+[ext_resource type="Texture2D" uid="uid://su2whvtm4owa" path="res://art/UI/map.png" id="3_pfjdt"]
+
+[node name="PlayerHUD" type="CanvasLayer"]
+script = ExtResource("1_rpmjj")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+custom_minimum_size = Vector2(64, 64)
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -126.015015
+offset_top = 17.0
+offset_right = -12.015015
+offset_bottom = 81.0
+grow_horizontal = 0
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_override_constants/separation = 18
+
+[node name="BackpackButton" type="TextureButton" parent="HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+texture_normal = ExtResource("2_3fcw0")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="MapButton" type="TextureButton" parent="HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+size_flags_vertical = 0
+texture_normal = ExtResource("3_pfjdt")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Inv_UI" parent="." instance=ExtResource("2_j85l1")]
+unique_name_in_owner = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -180.0
+offset_top = -260.0
+offset_right = 181.0
+offset_bottom = -43.0
+size_flags_vertical = 4

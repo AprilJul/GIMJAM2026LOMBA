@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://cvhkrt326ew1c"]
+
+[ext_resource type="Script" uid="uid://c0ut7c6sdtgwb" path="res://player/inventory/inventory_item.gd" id="1_j6ir3"]
+[ext_resource type="Texture2D" uid="uid://dbf3biiaqb8ji" path="res://art/UI/the_mirror.png" id="2_6n2sd"]
+
+[resource]
+script = ExtResource("1_j6ir3")
+name = "the_mirror"
+texture = ExtResource("2_6n2sd")
+metadata/_custom_type_script = "uid://c0ut7c6sdtgwb"

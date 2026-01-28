@@ -1,0 +1,331 @@
+[gd_scene load_steps=53 format=3 uid="uid://bpx7np7j2djce"]
+
+[ext_resource type="Texture2D" uid="uid://b8eq7xj7k2oh4" path="res://Menu/bg_frames/MENU1.png" id="1_fqgk7"]
+[ext_resource type="Script" uid="uid://pc3451118jv6" path="res://Menu/main_menu.gd" id="1_qgbhl"]
+[ext_resource type="Texture2D" uid="uid://br565jsa5hbld" path="res://Menu/bg_frames/MENU2.png" id="2_4d6nx"]
+[ext_resource type="Texture2D" uid="uid://wa2e70sgone6" path="res://Menu/bg_frames/MENU3.png" id="3_gr7fb"]
+[ext_resource type="Texture2D" uid="uid://cmpajn3pkgd13" path="res://Menu/bg_frames/MENU4.png" id="4_p2b1j"]
+[ext_resource type="Texture2D" uid="uid://cnbfy1kbd6osq" path="res://Menu/bg_frames/MENU5.png" id="5_qgbhl"]
+[ext_resource type="Texture2D" uid="uid://c3k5x17tjp1rj" path="res://Menu/bg_frames/MENU6.png" id="6_neh5o"]
+[ext_resource type="Texture2D" uid="uid://4b5nmi1ecvc5" path="res://Menu/bg_frames/MENU7.png" id="7_edlng"]
+[ext_resource type="Texture2D" uid="uid://bcxgtrbibu6yv" path="res://Menu/bg_frames/MENU8.png" id="8_sa0gf"]
+[ext_resource type="Texture2D" uid="uid://bm6tlhp3xn15e" path="res://Menu/bg_frames/MENU9.png" id="9_5vdpm"]
+[ext_resource type="Texture2D" uid="uid://c7iec54rw3p0a" path="res://Menu/bg_frames/MENU10.png" id="10_7c88l"]
+[ext_resource type="Texture2D" uid="uid://bbq1ycto7ym1x" path="res://Menu/bg_frames/MENU11.png" id="11_t08fg"]
+[ext_resource type="Texture2D" uid="uid://cavmnnplfg7f" path="res://Menu/bg_frames/MENU12.png" id="12_ltu4x"]
+[ext_resource type="Texture2D" uid="uid://k4sveeslohwt" path="res://Menu/bg_frames/MENU13.png" id="13_0x8q6"]
+[ext_resource type="Texture2D" uid="uid://du8s80j1g2c7f" path="res://Menu/bg_frames/MENU14.png" id="14_0af6i"]
+[ext_resource type="Texture2D" uid="uid://cimmmejgnahnr" path="res://Menu/bg_frames/MENU15.png" id="15_w436i"]
+[ext_resource type="Texture2D" uid="uid://csnhifu0ftj7r" path="res://Menu/bg_frames/MENU16.png" id="16_3tnfx"]
+[ext_resource type="Texture2D" uid="uid://coc08gxk0pjod" path="res://Menu/bg_frames/MENU17.png" id="17_7ydfh"]
+[ext_resource type="Texture2D" uid="uid://cbnahkxavqpdo" path="res://Menu/bg_frames/MENU18.png" id="18_2jmi6"]
+[ext_resource type="Texture2D" uid="uid://uhp38blwmetj" path="res://Menu/bg_frames/MENU19.png" id="19_e3nh1"]
+[ext_resource type="Texture2D" uid="uid://br1kj0dfyx28n" path="res://Menu/bg_frames/MENU20.png" id="20_ousuf"]
+[ext_resource type="Texture2D" uid="uid://w5p8r7wnqv2s" path="res://Menu/bg_frames/MENU21.png" id="21_cobna"]
+[ext_resource type="Texture2D" uid="uid://bpbo47wfestak" path="res://Menu/bg_frames/MENU22.png" id="22_8lgot"]
+[ext_resource type="Texture2D" uid="uid://vt7vppebcnbb" path="res://Menu/bg_frames/MENU23.png" id="23_xmmys"]
+[ext_resource type="Texture2D" uid="uid://35ctp8nrthqi" path="res://Menu/bg_frames/MENU24.png" id="24_xq4xe"]
+[ext_resource type="Texture2D" uid="uid://uy8rb5j5xi1o" path="res://Menu/bg_frames/MENU25.png" id="25_f1152"]
+[ext_resource type="Texture2D" uid="uid://kly1mrtlm72y" path="res://Menu/bg_frames/MENU26.png" id="26_6n0qj"]
+[ext_resource type="Texture2D" uid="uid://b4mqtbmevgwuy" path="res://Menu/bg_frames/MENU27.png" id="27_xfj70"]
+[ext_resource type="Texture2D" uid="uid://djiha88fj6w0b" path="res://Menu/bg_frames/MENU28.png" id="28_2ku6j"]
+[ext_resource type="Texture2D" uid="uid://d4h1jigwwnw6m" path="res://Menu/bg_frames/MENU29.png" id="29_l2dsn"]
+[ext_resource type="Texture2D" uid="uid://c47tcbciker8c" path="res://Menu/bg_frames/MENU30.png" id="30_hewnc"]
+[ext_resource type="Texture2D" uid="uid://c1ocfrlu2bklu" path="res://Menu/bg_frames/MENU31.png" id="31_17qa6"]
+[ext_resource type="Texture2D" uid="uid://djtupro8ojxhc" path="res://Menu/bg_frames/MENU32.png" id="32_j6rbv"]
+[ext_resource type="Texture2D" uid="uid://cfvl737n3i8mb" path="res://Menu/bg_frames/MENU33.png" id="33_vax6v"]
+[ext_resource type="Texture2D" uid="uid://bxwba2dru0rh4" path="res://Menu/bg_frames/MENU34.png" id="34_5yywo"]
+[ext_resource type="Texture2D" uid="uid://de7j3vfwlrjq" path="res://Menu/bg_frames/MENU35.png" id="35_bee18"]
+[ext_resource type="Texture2D" uid="uid://der435iq57ovn" path="res://Menu/bg_frames/MENU36.png" id="36_frbvw"]
+[ext_resource type="Texture2D" uid="uid://tk87amm7nrer" path="res://Menu/bg_frames/MENU37.png" id="37_bc3p2"]
+[ext_resource type="Texture2D" uid="uid://buemkaivqtaqa" path="res://Menu/bg_frames/MENU38.png" id="38_t01js"]
+[ext_resource type="Texture2D" uid="uid://dklgh5d4cs0ax" path="res://Menu/bg_frames/MENU39.png" id="39_u38bi"]
+[ext_resource type="Texture2D" uid="uid://di75dc0ylw1wx" path="res://Menu/bg_frames/MENU40.png" id="40_qdk6q"]
+[ext_resource type="Script" uid="uid://cr0xi7u4aatlw" path="res://Menu/background_animation.gd" id="41_4d6nx"]
+[ext_resource type="FontFile" uid="uid://di0hmrbuew7c1" path="res://assets/font/mogihaPen_ver120/mogihaPen.ttf" id="42_gr7fb"]
+[ext_resource type="Texture2D" uid="uid://cung05yucbrby" path="res://Menu/LOGO.png" id="43_p2b1j"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d4fix"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_fqgk7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_4d6nx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_gr7fb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_p2b1j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_qgbhl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_neh5o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_edlng")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_sa0gf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_5vdpm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_7c88l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_t08fg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_ltu4x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_0x8q6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_0af6i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_w436i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_3tnfx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_7ydfh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_2jmi6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_e3nh1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_ousuf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_cobna")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_8lgot")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_xmmys")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_xq4xe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_f1152")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_6n0qj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_xfj70")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_2ku6j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_l2dsn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_hewnc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_17qa6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_j6rbv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_vax6v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_5yywo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_bee18")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_frbvw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_bc3p2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_t01js")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_u38bi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_qdk6q")
+}],
+"loop": true,
+"name": &"animation",
+"speed": 12.0
+}]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p2b1j"]
+draw_center = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5vdpm"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qgbhl"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7c88l"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_neh5o"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sa0gf"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_edlng"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="MainMenu" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qgbhl")
+
+[node name="BackgroundAnimation" type="AnimatedSprite2D" parent="MainMenu"]
+position = Vector2(641.00006, 362)
+scale = Vector2(5, 5.006945)
+sprite_frames = SubResource("SpriteFrames_d4fix")
+animation = &"animation"
+autoplay = "animation"
+frame = 27
+frame_progress = 0.6608556
+script = ExtResource("41_4d6nx")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainMenu"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -440.0
+offset_top = -1.0249939
+offset_right = -104.0
+offset_bottom = 114.975006
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_constants/separation = 18
+
+[node name="StartButton" type="Button" parent="MainMenu/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_colors/font_hover_color = Color(0.84750736, 0, 0.4551465, 1)
+theme_override_colors/icon_disabled_color = Color(1, 1, 1, 0.4)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("42_gr7fb")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_p2b1j")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_5vdpm")
+theme_override_styles/hover = SubResource("StyleBoxFlat_qgbhl")
+theme_override_styles/focus = SubResource("StyleBoxFlat_7c88l")
+text = "Start The Game"
+
+[node name="Settings" type="Button" parent="MainMenu/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_colors/font_hover_color = Color(0.84750736, 0, 0.4551465, 1)
+theme_override_colors/icon_disabled_color = Color(1, 1, 1, 0.4)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("42_gr7fb")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_p2b1j")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_neh5o")
+theme_override_styles/hover = SubResource("StyleBoxFlat_sa0gf")
+theme_override_styles/focus = SubResource("StyleBoxFlat_edlng")
+text = "Settings"
+
+[node name="TextureRect" type="TextureRect" parent="MainMenu"]
+layout_mode = 0
+offset_left = 804.0
+offset_top = 34.0
+offset_right = 1232.4
+offset_bottom = 329.0
+texture = ExtResource("43_p2b1j")
+expand_mode = 3
+stretch_mode = 6
+
+[node name="SettingsMenu" type="ColorRect" parent="MainMenu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.7921569)
+
+[node name="SettingsContent" type="VBoxContainer" parent="MainMenu/SettingsMenu"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 25.0
+offset_bottom = 98.0
+grow_horizontal = 2
+
+[node name="Settings" type="Label" parent="MainMenu/SettingsMenu/SettingsContent"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("42_gr7fb")
+theme_override_font_sizes/font_size = 72
+text = "Settings"
+
+[node name="MasterVolume" type="VBoxContainer" parent="MainMenu/SettingsMenu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -165.0
+offset_top = -56.0
+offset_right = 165.0
+offset_bottom = 56.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Volume" type="Label" parent="MainMenu/SettingsMenu/MasterVolume"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 45
+text = "Master Volume"
+
+[node name="VolumeSlider" type="HSlider" parent="MainMenu/SettingsMenu/MasterVolume"]
+layout_mode = 2
+max_value = 1.0
+step = 0.05
+value = 1.0
+
+[node name="CloseSettings" type="Button" parent="MainMenu/SettingsMenu/MasterVolume"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("42_gr7fb")
+text = "Back"
+
+[connection signal="pressed" from="MainMenu/VBoxContainer/StartButton" to="MainMenu" method="_on_start_button_pressed"]
+[connection signal="pressed" from="MainMenu/VBoxContainer/Settings" to="MainMenu" method="_on_settings_button_pressed"]
+[connection signal="value_changed" from="MainMenu/SettingsMenu/MasterVolume/VolumeSlider" to="MainMenu" method="_on_master_slider_value_changed"]
+[connection signal="pressed" from="MainMenu/SettingsMenu/MasterVolume/CloseSettings" to="MainMenu" method="_on_close_settings_pressed"]

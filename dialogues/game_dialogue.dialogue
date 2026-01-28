@@ -3,14 +3,73 @@
 ~ scene1_monolog
 [wave] Today is more tiring than ever… I need to settle down and rest. [wave]
 
+~ waking_up
+
+Player: ....What was that..?
+Player: Now my head hurts...
+Player: ... Why [wait=1] am I forgetting things?
+Player: [speed=0.6]...[/speed]
+Player: That sudden bang....
+Player: [speed=0.5]It came from the door,[wait=0.4] isn't it?[/speed]
+
+=> END
+
+~ tutorial_glitch
+
+Player: [shake]Ugh[/shake],[wait=0.4] why is it empty behind here? Hello?
+Player: This is not normal... How do I get out of here?
+[color=#ffde66] Press M to open map and seek what is happening.[/color]
+
+=> END
+
+~ map_explanation
+
+[color=#ffff00]You are now seeing the map of your house.[/color]
+[color=#ffff00]To move between rooms, you must place hallways.[/color]
+[color=#ffff00]You can place hallways by selecting the hallway on bottom left or pressing 1 and 2.[/color]
+[color=#ffff00]To cancel placement press Esc.[/color]
+[color=#ffff00]To rotate your placement press Q or E.[/color]
+[color=#ffff00]To place down, just use your left click.[/color]
+[color=#ffff00]The amount of hallways you can place will be reduced. Both types share the same value. Be smart and economic about this![/color]
+[color=#3399ff]Now, go to the central room of 2nd floor.[/color]
+
+=> END 
+
+~ map_reclaim_opening
+You: That child...
+You: ...How do I get there?...
+You: I have no more hallways available...
+[color=#ffff00]Open your map again.[/color]
+
+=> END
+~ map_reclaim_explanation
+[color=#ffff00]You need more hallways to get into that room.[/color]
+[color=#ffff00]Click on one of the hallways that you already placed.[/color]
+[color=#ffff00]Click the Trash Icon to reclaim the hallway.[/color]
+[color=#ffff00]Now the amount of hallway increased. You can place more hallways again.[/color]
+[color=#ffff00]Reclaim the other hallways to get more amount again. [/color]
+[color=#3399ff]Now, find that child. [/color]
+
+=> END
+~ teddy_interact
+You: ...
+You: ..?
+
+=> END
+
 ~ scene5A_interact_TeddyBear
-it feels familiar 
-Warm
+You: it feels familiar...
+You: Warm...
+
+=> END 
 
 ~ scene5B_child
 Child: [b]Sis! Mom’s been calling you — come here![/b]
+You: ?
 
+=> END
 ~ scene5C_dad
+You: ...
 Dad: You’re home early today
 [wait=2]
 Dad: Good. Don’t push yourself too hard

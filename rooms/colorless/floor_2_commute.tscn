@@ -1,0 +1,118 @@
+[gd_scene load_steps=16 format=3 uid="uid://cqh7vcq52r386"]
+
+[ext_resource type="Texture2D" uid="uid://dp2vjlsy5rn5j" path="res://assets/colorless/rumah_0000s_0005_hallNoColor.png" id="1_1juvx"]
+[ext_resource type="Texture2D" uid="uid://dxg0o5bprql47" path="res://assets/colorless/rumah_0000s_0004_railNoColor.png" id="2_q6o71"]
+[ext_resource type="Script" uid="uid://cvrsuek2te4ou" path="res://system/transparent_stairs.gd" id="3_q6o71"]
+[ext_resource type="Script" uid="uid://vwks5wno1hbk" path="res://system/show_child_location.gd" id="4_popdy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_popdy"]
+size = Vector2(71.5, 25.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1juvx"]
+size = Vector2(105, 124)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lndr3"]
+size = Vector2(4, 115)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_84kpm"]
+size = Vector2(3, 66)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m231s"]
+size = Vector2(3, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xgdqr"]
+size = Vector2(11, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xdieq"]
+size = Vector2(15, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uywx8"]
+size = Vector2(44, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q6o71"]
+size = Vector2(7, 20)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_1juvx"]
+a = Vector2(17, -34)
+b = Vector2(25, -33)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_q6o71"]
+a = Vector2(-16, -3)
+b = Vector2(0, -3)
+
+[node name="Floor2Commute" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(30.5, -62)
+texture = ExtResource("1_1juvx")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(48.5, -60)
+texture = ExtResource("2_q6o71")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(46, -86.25)
+shape = SubResource("RectangleShape2D_popdy")
+
+[node name="Area2D" type="Area2D" parent="."]
+visible = false
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(32.5, -62)
+shape = SubResource("RectangleShape2D_1juvx")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(82.5, -65.5)
+shape = SubResource("RectangleShape2D_lndr3")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2(-18, -90)
+shape = SubResource("RectangleShape2D_84kpm")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="."]
+position = Vector2(-18, -24)
+shape = SubResource("RectangleShape2D_m231s")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="."]
+position = Vector2(-14, -4)
+shape = SubResource("RectangleShape2D_xgdqr")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="."]
+position = Vector2(16, -4)
+shape = SubResource("RectangleShape2D_xdieq")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="."]
+position = Vector2(62.5, -4)
+shape = SubResource("RectangleShape2D_uywx8")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(-23.5, -124)
+polygon = PackedVector2Array(103, 68, 56.5, 68, 48.5, 66, 48.5, 60, 40.5, 60, 49.5, 68, 50.5, 69, 56, 72, 56, 92, 48, 92, 45.5, 92, 40.5, 92, 40, 94, 103, 94)
+
+[node name="StairsToF1" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StairsToF1"]
+position = Vector2(28.5, -42)
+shape = SubResource("RectangleShape2D_q6o71")
+
+[node name="LandingF2" type="Marker2D" parent="."]
+position = Vector2(10, -48)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("SegmentShape2D_1juvx")
+
+[node name="TransparentWall" type="Area2D" parent="."]
+script = ExtResource("3_q6o71")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TransparentWall"]
+polygon = PackedVector2Array(-20, -124, 85, -124, 85, -98, 11, -98, 11, -87, -10, -87, -10, -98, -20, -98)
+
+[node name="ShowChildLocation" type="Area2D" parent="."]
+script = ExtResource("4_popdy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ShowChildLocation"]
+position = Vector2(8, -5)
+shape = SubResource("SegmentShape2D_q6o71")

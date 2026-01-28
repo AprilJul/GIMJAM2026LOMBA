@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://l7sywh7lye3e"]
+
+[ext_resource type="Script" uid="uid://cm6vfhyle8ytf" path="res://system/hallway_preview.gd" id="1_l3nli"]
+
+[node name="HallwayPreview" type="Node2D"]
+script = ExtResource("1_l3nli")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.423529)

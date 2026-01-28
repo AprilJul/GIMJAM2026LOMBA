@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://civlofh1bp8k4"]
+
+[ext_resource type="Script" uid="uid://c0ut7c6sdtgwb" path="res://player/inventory/inventory_item.gd" id="1_g24x8"]
+[ext_resource type="Texture2D" uid="uid://dy0wbvi84m7gk" path="res://art/UI/jacket.png" id="2_t5uho"]
+
+[resource]
+script = ExtResource("1_g24x8")
+name = "jacket"
+texture = ExtResource("2_t5uho")
+metadata/_custom_type_script = "uid://c0ut7c6sdtgwb"

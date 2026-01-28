@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://c85ysa7eq4bkw"]
+
+[ext_resource type="Script" uid="uid://c0ut7c6sdtgwb" path="res://player/inventory/inventory_item.gd" id="1_ukpw6"]
+[ext_resource type="Texture2D" uid="uid://bnttpgy5ci7s4" path="res://art/UI/knot.png" id="2_6hkjg"]
+
+[resource]
+script = ExtResource("1_ukpw6")
+name = "knot"
+texture = ExtResource("2_6hkjg")
+metadata/_custom_type_script = "uid://c0ut7c6sdtgwb"

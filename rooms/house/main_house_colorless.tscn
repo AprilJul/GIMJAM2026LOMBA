@@ -1,0 +1,116 @@
+[gd_scene load_steps=15 format=3 uid="uid://b5hx88o8gv1p5"]
+
+[ext_resource type="PackedScene" uid="uid://cqh7vcq52r386" path="res://rooms/colorless/floor_2_commute.tscn" id="1_5y3gl"]
+[ext_resource type="Script" uid="uid://cgmelni7okx61" path="res://system/main_house_colorless.gd" id="1_06r07"]
+[ext_resource type="Script" uid="uid://civ615lxg6jyi" path="res://system/cutscene_controller.gd" id="2_1ooxe"]
+[ext_resource type="Script" uid="uid://b4eummiush2mk" path="res://grid_display.gd" id="2_g1sih"]
+[ext_resource type="PackedScene" uid="uid://ctde20y8hfjv5" path="res://rooms/colorless/living_room.tscn" id="2_jre0q"]
+[ext_resource type="PackedScene" uid="uid://cvie072o00unb" path="res://rooms/colorless/bedroom_1.tscn" id="3_8t2qx"]
+[ext_resource type="PackedScene" uid="uid://bgoqf0g8scau6" path="res://rooms/map_system.tscn" id="3_jre0q"]
+[ext_resource type="PackedScene" uid="uid://clrxw6n6ihcam" path="res://rooms/hallways/hallway_straight_vertical.tscn" id="4_eqhth"]
+[ext_resource type="PackedScene" uid="uid://cb2cwrjgxfsvw" path="res://player/player.tscn" id="5_g1sih"]
+[ext_resource type="PackedScene" uid="uid://cn504iyb76kwy" path="res://rooms/colorless/bedroom_2.tscn" id="5_udac8"]
+[ext_resource type="PackedScene" uid="uid://7h60sam1dytg" path="res://rooms/colorless/master_bedroom.tscn" id="6_w317r"]
+[ext_resource type="PackedScene" uid="uid://bdjs86rf1xcfn" path="res://npc/npc(adik).tscn" id="10_qnhsa"]
+[ext_resource type="AudioStream" uid="uid://macwgu1nsfr7" path="res://assets/audio/door.wav" id="12_qnhsa"]
+[ext_resource type="PackedScene" uid="uid://ccf4bfwtb18ju" path="res://player/inventory/items/item_get_ui.tscn" id="14_g7ra3"]
+
+[node name="MainHouse" type="Node2D" node_paths=PackedStringArray("f1_landing", "f2_landing", "stairs_up_trigger", "stairs_down_trigger")]
+script = ExtResource("1_06r07")
+f1_landing = NodePath("WorldContent/Rooms/LivingRoom/LandingF1")
+f2_landing = NodePath("WorldContent/Rooms/Floor2/Floor2Commute/LandingF2")
+stairs_up_trigger = NodePath("WorldContent/Rooms/LivingRoom/StairSToF2")
+stairs_down_trigger = NodePath("WorldContent/Rooms/Floor2/Floor2Commute/StairsToF1")
+
+[node name="WorldContent" type="Node2D" parent="."]
+
+[node name="CutsceneController" type="Node" parent="WorldContent"]
+script = ExtResource("2_1ooxe")
+
+[node name="GridDisplay" type="Node2D" parent="WorldContent"]
+script = ExtResource("2_g1sih")
+
+[node name="PlacedHallways" type="Node2D" parent="WorldContent"]
+y_sort_enabled = true
+
+[node name="Rooms" type="Node2D" parent="WorldContent"]
+y_sort_enabled = true
+
+[node name="Floor2" type="Node2D" parent="WorldContent/Rooms"]
+
+[node name="Bedroom1" parent="WorldContent/Rooms/Floor2" instance=ExtResource("3_8t2qx")]
+position = Vector2(525, 517)
+scale = Vector2(1.4, 1.4)
+
+[node name="HallwayStraightVertical" parent="WorldContent/Rooms/Floor2" instance=ExtResource("4_eqhth")]
+position = Vector2(575, 225)
+
+[node name="Floor2Commute" parent="WorldContent/Rooms/Floor2" instance=ExtResource("1_5y3gl")]
+position = Vector2(575, 401)
+scale = Vector2(1.4, 1.6)
+
+[node name="CollisionShape2D" parent="WorldContent/Rooms/Floor2/Floor2Commute/Area2D" index="0"]
+position = Vector2(32.5, -61.875)
+
+[node name="Bedroom2" parent="WorldContent/Rooms/Floor2" instance=ExtResource("5_udac8")]
+position = Vector2(925, 500)
+scale = Vector2(1.1, 1)
+
+[node name="MasterBedroom" parent="WorldContent/Rooms/Floor2" instance=ExtResource("6_w317r")]
+position = Vector2(1025, 200)
+scale = Vector2(1.4, 1.4)
+
+[node name="LivingRoom" parent="WorldContent/Rooms" instance=ExtResource("2_jre0q")]
+position = Vector2(2837, 412)
+scale = Vector2(1.4, 1.4)
+
+[node name="Child" parent="WorldContent" instance=ExtResource("10_qnhsa")]
+position = Vector2(394, 309)
+
+[node name="Player" parent="WorldContent" groups=["Player"] instance=ExtResource("5_g1sih")]
+y_sort_enabled = true
+position = Vector2(580, 323)
+
+[node name="CutsceneCamera" type="Camera2D" parent="WorldContent"]
+enabled = false
+
+[node name="MapCanvas" type="CanvasLayer" parent="."]
+
+[node name="MapSystem" parent="MapCanvas" node_paths=PackedStringArray("placed_hallways_node") instance=ExtResource("3_jre0q")]
+position = Vector2(-2, 2)
+placed_hallways_node = NodePath("../../WorldContent/PlacedHallways")
+
+[node name="MapCamera" type="Camera2D" parent="MapCanvas"]
+position = Vector2(640, 360)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Vignette" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.411765)
+
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+offset_left = 524.0
+offset_top = 291.0
+offset_right = 582.0
+offset_bottom = 331.0
+
+[node name="WakeText" type="Label" parent="CanvasLayer"]
+offset_left = 536.0
+offset_top = 297.0
+offset_right = 658.0
+offset_bottom = 325.0
+theme_override_font_sizes/font_size = 20
+text = "..."
+
+[node name="DoorPlayer" type="AudioStreamPlayer" parent="CanvasLayer"]
+stream = ExtResource("12_qnhsa")
+
+[node name="ItemGetUI" parent="." instance=ExtResource("14_g7ra3")]
+
+[editable path="WorldContent/Rooms/Floor2/Floor2Commute"]
+[editable path="WorldContent/Rooms/LivingRoom"]

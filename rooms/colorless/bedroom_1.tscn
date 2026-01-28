@@ -1,0 +1,98 @@
+[gd_scene load_steps=12 format=3 uid="uid://cvie072o00unb"]
+
+[ext_resource type="Texture2D" uid="uid://d253cg6wlm1lk" path="res://assets/colorless/rumah_0000s_0006_kamarAnakNoColor.png" id="1_xavvm"]
+[ext_resource type="Script" uid="uid://cvrsuek2te4ou" path="res://system/transparent_stairs.gd" id="2_k22lf"]
+[ext_resource type="Script" uid="uid://c8cfou7t4tcsk" path="res://system/tutorial_trigger_map1.gd" id="3_574nb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xavvm"]
+size = Vector2(45, 29)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_roilg"]
+size = Vector2(4, 49)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k22lf"]
+size = Vector2(72, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_574nb"]
+size = Vector2(4, 78)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w80ka"]
+size = Vector2(14, 41)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_roilg"]
+a = Vector2(-17, 9)
+b = Vector2(16, 9)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k55cr"]
+size = Vector2(72, 78)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_k22lf"]
+a = Vector2(-16, 4)
+b = Vector2(1, 4)
+
+[node name="Bedroom1" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-19, 50)
+texture = ExtResource("1_xavvm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-32.5, 36.5)
+shape = SubResource("RectangleShape2D_xavvm")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="."]
+position = Vector2(-53, 75.5)
+shape = SubResource("RectangleShape2D_roilg")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="."]
+position = Vector2(-53, 75.5)
+shape = SubResource("RectangleShape2D_roilg")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(-19, 110)
+shape = SubResource("RectangleShape2D_k22lf")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2(15, 61)
+shape = SubResource("RectangleShape2D_574nb")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(9, 22, 13, 22, 13, 51, 9, 51, 9, 22)
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="."]
+position = Vector2(10, 79.5)
+shape = SubResource("RectangleShape2D_w80ka")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="."]
+position = Vector2(-34, 70)
+shape = SubResource("SegmentShape2D_roilg")
+
+[node name="TransparentWall" type="Area2D" parent="."]
+script = ExtResource("2_k22lf")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TransparentWall"]
+polygon = PackedVector2Array(-55, 0, 17, 0, 17, 22, 8, 22, 8, 34, -9, 34, -9, 22, -55, 22)
+
+[node name="Area2D" type="Area2D" parent="."]
+visible = false
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-19, 61)
+shape = SubResource("RectangleShape2D_k55cr")
+
+[node name="PlayerSpawn" type="Marker2D" parent="."]
+position = Vector2(-36, 95)
+
+[node name="StartTutorial" type="Area2D" parent="."]
+position = Vector2(7, 31)
+script = ExtResource("3_574nb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StartTutorial"]
+shape = SubResource("SegmentShape2D_k22lf")
+
+[node name="ChildSpawn" type="Marker2D" parent="."]
+position = Vector2(-16, 51)
+
+[node name="DoorDirection" type="Marker2D" parent="."]
+position = Vector2(0, 38)
