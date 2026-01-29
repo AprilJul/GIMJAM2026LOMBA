@@ -53,3 +53,5 @@ offset_top = -260.0
 offset_right = 181.0
 offset_bottom = -43.0
 size_flags_vertical = 4
+
+[connection signal="pressed" from="HBoxContainer/MapButton" to="." method="_on_map_pressed"]

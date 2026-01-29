@@ -1,0 +1,116 @@
+[gd_scene load_steps=12 format=3 uid="uid://eoujkv0eftio"]
+
+[ext_resource type="Texture2D" uid="uid://bql12ym1q5w4i" path="res://art/Character/ibu_semua.png" id="1_tb24r"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vw5nn"]
+atlas = ExtResource("1_tb24r")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sagkf"]
+atlas = ExtResource("1_tb24r")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_31g2o"]
+atlas = ExtResource("1_tb24r")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8im8x"]
+atlas = ExtResource("1_tb24r")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pdw8r"]
+atlas = ExtResource("1_tb24r")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6lhpo"]
+atlas = ExtResource("1_tb24r")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d560d"]
+atlas = ExtResource("1_tb24r")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8gfrs"]
+atlas = ExtResource("1_tb24r")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8yscw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vw5nn")
+}],
+"loop": true,
+"name": &"ibu_baju1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sagkf")
+}],
+"loop": true,
+"name": &"ibu_baju1_kacamata",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_31g2o")
+}],
+"loop": true,
+"name": &"ibu_baju2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8im8x")
+}],
+"loop": true,
+"name": &"ibu_baju2_kacamata",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pdw8r")
+}],
+"loop": true,
+"name": &"ibu_baju3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6lhpo")
+}],
+"loop": true,
+"name": &"ibu_baju3_kacamata",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d560d")
+}],
+"loop": true,
+"name": &"ibu_baju4",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8gfrs")
+}],
+"loop": true,
+"name": &"ibu_baju4_kacamata",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_br1fs"]
+radius = 4.0
+height = 20.0
+
+[node name="npc(ibu)" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_8yscw")
+animation = &"ibu_baju3_kacamata"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4)
+shape = SubResource("CapsuleShape2D_br1fs")

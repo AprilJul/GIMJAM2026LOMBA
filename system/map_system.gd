@@ -17,7 +17,6 @@ var selected_preview_data = null
 # --- INITIALIZATION ---
 func toggle_map():
 	visible = !visible
-	
 	if visible:
 		# Check if the child reveal happened AND we haven't shown the tutorial yet
 		if GameManager.has_reclaim_hallway and not GameManager.has_opened_reclaim_tutorial:

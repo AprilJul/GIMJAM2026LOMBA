@@ -15,10 +15,12 @@ extends Node2D
 @export var stairs_down_trigger: Area2D
 
 func _ready():
+	print("Main house added to group: ", is_in_group("main_house"))
 	map_system.visible = false
 	map_cam.enabled = false 
 	player_cam.enabled = true 
 	
+	add_to_group("main_house")
 	# Connect the teleport signals
 	if stairs_up_trigger:
 		stairs_up_trigger.body_entered.connect(_on_stairs_up_entered)
@@ -73,3 +75,21 @@ func _teleport_player(dest: Vector2):
 	# This stops the camera from "flying" across the empty space between floors
 	if player_cam:
 		player_cam.reset_smoothing()
+
+# --- TOGGLE MAP FROM HUD ---
+func toggle_map_from_hud():
+	# Replikasi logika dari _input()
+	map_system.toggle_map()
+	
+	var opening = map_system.visible
+	grid_display.visible = opening
+	
+	map_cam.enabled = opening
+	player_cam.enabled = !opening
+	
+	if opening:
+		map_cam.make_current()
+		map_system.open_map()
+	else:
+		player_cam.make_current()
+		map_system.close_map()

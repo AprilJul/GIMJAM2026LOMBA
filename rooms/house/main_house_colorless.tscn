@@ -76,7 +76,7 @@ enabled = false
 
 [node name="MapCanvas" type="CanvasLayer" parent="."]
 
-[node name="MapSystem" parent="MapCanvas" node_paths=PackedStringArray("placed_hallways_node") instance=ExtResource("3_jre0q")]
+[node name="MapSystem" parent="MapCanvas" node_paths=PackedStringArray("placed_hallways_node") groups=["map_system"] instance=ExtResource("3_jre0q")]
 position = Vector2(-2, 2)
 placed_hallways_node = NodePath("../../WorldContent/PlacedHallways")
 
