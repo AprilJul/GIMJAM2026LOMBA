@@ -24,14 +24,14 @@ Player: This is not normal... How do I get out of here?
 
 ~ map_explanation
 
-[color=#ffff00]You are now seeing the map of your house.[/color]
-[color=#ffff00]To move between rooms, you must place hallways.[/color]
-[color=#ffff00]You can place hallways by selecting the hallway on bottom left or pressing 1 and 2.[/color]
-[color=#ffff00]To cancel placement press Esc.[/color]
-[color=#ffff00]To rotate your placement press Q or E.[/color]
-[color=#ffff00]To place down, just use your left click.[/color]
-[color=#ffff00]The amount of hallways you can place will be reduced. Both types share the same value. Be smart and economic about this![/color]
-[color=#3399ff]Now, go to the central room of 2nd floor.[/color]
+#[color=#ffff00]You are now seeing the map of your house.[/color]
+#[color=#ffff00]To move between rooms, you must place hallways.[/color]
+#[color=#ffff00]You can place hallways by selecting the hallway on bottom left or pressing 1 and 2.[/color]
+#[color=#ffff00]To cancel placement press Esc.[/color]
+#[color=#ffff00]To rotate your placement press Q or E.[/color]
+#[color=#ffff00]To place down, just use your left click.[/color]
+#[color=#ffff00]The amount of hallways you can place will be reduced. Both types share the same value. Be smart and economic about this![/color]
+#[color=#3399ff]Now, go to the central room of 2nd floor.[/color]
 
 => END 
 
@@ -70,46 +70,96 @@ You: ?
 => END
 ~ scene5C_dad
 You: ...
-Dad: You’re home early today
-[wait=2]
+Dad: You’re home early today... [wait=1]
+You: ...
 Dad: Good. Don’t push yourself too hard
+
+=> END
 
 ~ scene5C_mom
 Mom: Wash your hands first
 Mom: Dinner will be ready soon
 Mom: [wave amp=20.0 freq=3.0]Is the food ready?[/wave]
 
-~ scene6_child
-Child: [wave amp=20.0 freq=3.0] You found me [/wave]
-Child: I was waiting
+=> END
+
+~ dinner_time
+set State.can_move = false
+[wait=1.0]
+Mom: [speed=0.8]It’s finally quiet...[/speed] 
+Mom: I feel like I haven't seen all of you in the same room for ages. [wait=0.8]
+Dad: [speed=0.6]Work has been heavy lately. [wait=0.5] But tonight... tonight we just eat.[/speed]
+
+You: ...
+[wait=0.5]
+Child: [wave amp=15.0 freq=2.0]The soup is [color=ffebad]warm[/color].[/wave]
+Child: I like it when we’re like this. [wait=1.0]
+
+Dad: We all do, kiddo. [wait=0.8]
+Mom: [speed=0.5][color=ffadad]Eat slowly.[/color][/speed] No one is going anywhere.
+Mom: We have all the time in the world.
+
+You: (It feels so real...)
+You: (The smell... the steam... I don't want to leave.)
+
+[wait=2.0]
+# The dramatic shift starts here
+Dad: [speed=0.3]Why are you crying?[/speed] [wait=1.5]
+You: ... [wait=1.0]
+Mom: [speed=0.4]Don't worry...[/speed] [wait=1.0]
+Mom: [speed=0.2]It’s okay to [wave]wake up[/wave] now.[/speed]
+
+[wait=2.0]
+=> END
+
+~ basket_interact
+You: This is...
+You: ..?
+You: ..!!
+=> END
+
+~ scene6_picnic
+You: ... [wait=1.0]
+Child: [wave amp=20.0 freq=3.0]You found me...[/wave] [wait=0.8]
+Child: I was waiting. [wait=1.5]
+
+You: ... [wait=0.5]
 
 ~ scene6_child_MemShard1
-Child: It’s [wave amp=10.0 freq=3.0]warm[/wave] here
-Child: Let’s stay a little longer
+Child: It’s [wave amp=10.0 freq=3.0][color=ffebad]warm[/color][/wave] here.
+Child: Let’s stay a little longer... [wait=1.2]
+You: ...
 
 ~ scene6_dad
-Dad:You don’t have to be brave all the time
-Dad:I’ve got you
+Dad: [speed=0.5]You don’t have to be brave all the time.[/speed] [wait=0.8]
+Dad: I’ve got you. [wait=1.5]
 
 ~ scene6_dad_MemShard1
-Dad: If anything happens…
-[wait=1]
-Dad: Just live well. That’s enough
+Dad: [speed=0.3]If anything happens…[/speed] [wait=1.5]
+Dad: Just live well. [wait=0.8] That’s enough.
+You: [speed=0.8]Okay, dad.[/speed] [wait=1.2]
 
 ~ scene6_mom
-Mom: Eat slowly
-Mom: You’re always in a hurry
+Mom: [speed=1.2]Eat slowly![/speed] [wait=0.5]
+Mom: You’re always in a hurry. [wait=1.0]
+You: ...
 
 ~ scene6_mom_MemShard1
-Mom: No matter how tired I get…
-Mom: [wave amp=10.0 freq=3.0]Coming home to you makes it worth it[/wave]
-
-~ scene6_interactPicnicMat
-For a moment, i feel [wave amp=15.0 freq=3.0]safe[/wave]
-
-~ scene6_leaving_picnic_area
+Mom: No matter how tired I get… [wait=1.0]
+Mom: [wave amp=15.0 freq=2.0][color=ffadad]Coming home to you makes it worth it.[/color][/wave] [wait=2.0]
+You: ... [wait=1.5]
 Child: Promise you won’t forget?
+You: ... I won't...
+[wait=1]
+=> END 
 
+~ scene6_ending
+You: ....
+=> END
+
+~ memory_shard_earned
+[color=#ffff00]You gained a memory shard. Check your inventory by pressing M.[/color]
+=> END 
 ~ scene7_interact_wardrobe
 It’s cold… yet somehow, this feels familiar
 
