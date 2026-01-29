@@ -5,6 +5,9 @@ extends CanvasLayer
 @onready var map_button = %MapButton
 @onready var inventory_ui = %Inv_UI
 
+# -- FOR TRACK STATE -- 
+var is_hud_hidden = false
+
 func _ready():
 	# Cek satu per satu untuk memastikan tidak ada yang null
 	if backpack_button:
@@ -40,3 +43,21 @@ func _on_map_pressed():
 			print("ERROR: Main house tidak memiliki method toggle_map_from_hud!")
 	else:
 		print("ERROR: Main house tidak ditemukan! Periksa apakah add_to_group('main_house') sudah ditambahkan.")
+
+func toggle_hud_visibility(should_hide: bool):
+	if should_hide:
+		# Sembunyikan HUD
+		self.visible = false
+		is_hud_hidden = true
+		print("HUD hidden")
+	else:
+		# Tampilkan kembali HUD
+		self.visible = true
+		is_hud_hidden = false
+		print("HUD shown")
+
+# Optional: Fungsi untuk toggle sederhana
+func toggle_hud():
+	self.visible = !self.visible
+	is_hud_hidden = !self.visible
+	print("HUD toggled, visible: ", self.visible)

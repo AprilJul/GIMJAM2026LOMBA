@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bs3e5w4pr1rjd"
+path="res://.godot/imported/Rain Sound Effect Short - Rain in Nature.wav-6538f84cb4fbcfa109de735d038d6279.sample"
+
+[deps]
+
+source_file="res://assets/audio/Hujan dan petir/Rain Sound Effect Short - Rain in Nature.wav"
+dest_files=["res://.godot/imported/Rain Sound Effect Short - Rain in Nature.wav-6538f84cb4fbcfa109de735d038d6279.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

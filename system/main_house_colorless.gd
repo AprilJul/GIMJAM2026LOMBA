@@ -6,6 +6,7 @@ extends Node2D
 @onready var map_system = $MapCanvas/MapSystem
 @onready var grid_display = $WorldContent/GridDisplay
 @onready var player = $WorldContent/Player
+@onready var player_hud = $PlayerHUD
 
 # --- NEW STAIRS REFERENCES ---
 # Drag these from the scene tree to the Inspector slots
@@ -90,6 +91,17 @@ func toggle_map_from_hud():
 	if opening:
 		map_cam.make_current()
 		map_system.open_map()
+		# --- TAMBAHKAN: Sembunyikan HUD saat map terbuka ---
+		if player_hud and player_hud.has_method("toggle_hud_visibility"):
+			player_hud.toggle_hud_visibility(true)
+		elif player_hud:
+			# Fallback jika method tidak ada
+			player_hud.visible = false
 	else:
 		player_cam.make_current()
 		map_system.close_map()
+		if player_hud and player_hud.has_method("toggle_hud_visibility"):
+			player_hud.toggle_hud_visibility(false)
+		elif player_hud:
+			# Fallback jika method tidak ada
+			player_hud.visible = true

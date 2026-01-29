@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://hav4mepfxgho"
+path="res://.godot/imported/GLASS_BROKEN_SOUND_EFFECT_SUARA_GELAS_PECAH_128k.mp3-5791b0fe35a2bb9e0a3d89dabed4bf6e.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/Cermin pecah/GLASS_BROKEN_SOUND_EFFECT_SUARA_GELAS_PECAH_128k.mp3"
+dest_files=["res://.godot/imported/GLASS_BROKEN_SOUND_EFFECT_SUARA_GELAS_PECAH_128k.mp3-5791b0fe35a2bb9e0a3d89dabed4bf6e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

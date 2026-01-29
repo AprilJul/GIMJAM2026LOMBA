@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://dkdadwq0hsemv"]
+
+[ext_resource type="Script" uid="uid://cj1eincr7gier" path="res://cutscene/scene1/scene_1_cutscene.gd" id="1_oh8lp"]
+[ext_resource type="VideoStream" uid="uid://gor77x81w2yd" path="res://art/cutscene_asset/scene1/SCENE 1.ogv" id="2_t0tqk"]
+[ext_resource type="VideoStream" uid="uid://pqpxb0uatxup" path="res://art/cutscene_asset/scene1/SCENE 1 LOOP.ogv" id="3_jejgn"]
+[ext_resource type="AudioStream" uid="uid://bs3e5w4pr1rjd" path="res://assets/audio/Hujan dan petir/Rain Sound Effect Short - Rain in Nature.wav" id="4_jejgn"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_oh8lp")
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
+anchors_preset = -1
+offset_top = -2.0
+offset_right = 2892.0
+offset_bottom = 2986.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+size_flags_horizontal = 4
+size_flags_vertical = 0
+ratio = 2.0
+alignment_vertical = 0
+
+[node name="intro_video" type="VideoStreamPlayer" parent="AspectRatioContainer"]
+layout_mode = 2
+stream = ExtResource("2_t0tqk")
+autoplay = true
+
+[node name="loop_video" type="VideoStreamPlayer" parent="AspectRatioContainer"]
+layout_mode = 2
+stream = ExtResource("3_jejgn")
+loop = true
+buffering_msec = 10
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_jejgn")
+
+[node name="FadeRect" type="ColorRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0

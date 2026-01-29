@@ -84,6 +84,7 @@ placed_hallways_node = NodePath("../../WorldContent/PlacedHallways")
 position = Vector2(640, 360)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="Vignette" type="ColorRect" parent="CanvasLayer"]
 anchors_preset = 15

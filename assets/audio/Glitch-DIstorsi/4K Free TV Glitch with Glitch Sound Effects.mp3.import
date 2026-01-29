@@ -1,0 +1,18 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c1dt2hldmds2s"
+valid=false
+
+[deps]
+
+source_file="res://assets/audio/Glitch-DIstorsi/4K Free TV Glitch with Glitch Sound Effects.mp3"
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

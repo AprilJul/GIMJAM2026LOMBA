@@ -162,6 +162,10 @@ func _play_bedroom_cutscene_1() -> void:
 	player.can_move = true
 	print("Act 9: Player control restored.")
 	
+	if player.has_method("collect"):
+		player.collect(ITEM_TEDDY)
+		print("Debug: Teddy Bear telah dimasukkan ke inventory setelah cutscene.")
+		
 # --- Camera Switching Helpers ---
 func _switch_to_cutscene_camera():
 	cutscene_camera.enabled = true
