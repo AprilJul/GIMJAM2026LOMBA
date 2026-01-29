@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://bpx7np7j2djce"]
+[gd_scene load_steps=54 format=3 uid="uid://bpx7np7j2djce"]
 
 [ext_resource type="Texture2D" uid="uid://b8eq7xj7k2oh4" path="res://Menu/bg_frames/MENU1.png" id="1_fqgk7"]
 [ext_resource type="Script" uid="uid://pc3451118jv6" path="res://Menu/main_menu.gd" id="1_qgbhl"]
@@ -44,6 +44,7 @@
 [ext_resource type="Script" uid="uid://cr0xi7u4aatlw" path="res://Menu/background_animation.gd" id="41_4d6nx"]
 [ext_resource type="FontFile" uid="uid://di0hmrbuew7c1" path="res://assets/font/mogihaPen_ver120/mogihaPen.ttf" id="42_gr7fb"]
 [ext_resource type="Texture2D" uid="uid://cung05yucbrby" path="res://Menu/LOGO.png" id="43_p2b1j"]
+[ext_resource type="AudioStream" uid="uid://br85f4m1yal5" path="res://assets/audio/OST/Breezy!.mp3" id="45_neh5o"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_d4fix"]
 animations = [{
@@ -326,6 +327,10 @@ value = 1.0
 layout_mode = 2
 theme_override_fonts/font = ExtResource("42_gr7fb")
 text = "Back"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("45_neh5o")
+autoplay = true
 
 [connection signal="pressed" from="MainMenu/VBoxContainer/StartButton" to="MainMenu" method="_on_start_button_pressed"]
 [connection signal="pressed" from="MainMenu/VBoxContainer/Settings" to="MainMenu" method="_on_settings_button_pressed"]

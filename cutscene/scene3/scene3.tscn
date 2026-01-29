@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://c6glu0d1w60nf"]
+
+[ext_resource type="Script" uid="uid://dl8kg8lyueayh" path="res://cutscene/scene3/scene3.gd" id="1_l01ju"]
+[ext_resource type="VideoStream" uid="uid://cvcqk2vs6aoeq" path="res://art/cutscene_asset/scene3/Scene 3A.ogv" id="2_rlvix"]
+[ext_resource type="AudioStream" uid="uid://cglpkixxhx8xw" path="res://assets/audio/OST/Home.wav" id="3_28fgk"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_l01ju")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+offset_right = 1280.0
+offset_bottom = 725.0
+stream = ExtResource("2_rlvix")
+autoplay = true
+expand = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_28fgk")
+autoplay = true
+bus = &"Song"
+
+[connection signal="finished" from="VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]

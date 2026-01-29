@@ -24,7 +24,7 @@ func _on_start_button_pressed():
 	await tween.finished
 	
 	# 4. Baru pindah ke scene cutscene
-	get_tree().change_scene_to_file("res://rooms/house/main_house_colorless.tscn")
+	get_tree().change_scene_to_file("res://cutscene/scene1/scene_1_cutscene.tscn")
 
 func _on_settings_button_pressed() -> void:
 	settings_menu.visible = true

@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="GIMJAM2026"
-run/main_scene="uid://b5hx88o8gv1p5"
+run/main_scene="uid://bpx7np7j2djce"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
